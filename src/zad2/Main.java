@@ -8,6 +8,7 @@ package zad2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main
@@ -18,8 +19,8 @@ public class Main
 		String fname = System.getProperty("user.home") + "/tab.txt";
 
 		Scanner scan = null;
-		int[] tablica = new int[1000];
-		int licznik = 0;
+		ArrayList<Integer> tablicaArray = new ArrayList<Integer>();
+	
 
 		try
 		{
@@ -44,28 +45,30 @@ public class Main
 				System.exit(0);
 			}
 
-			tablica[licznik] = Integer.valueOf(zmienna);
-			licznik++;
+		
+			tablicaArray.add(Integer.valueOf(zmienna));
+		
 		}
-		int maks = tablica[0];
+	
+		int maks =  tablicaArray.get(0);
 		int[] gdzieMaks = new int[10000000];
 		int licznikMaks = 0;
 
-		for (int i = 0; i < licznik; i++)
+		for (int i = 0; i < tablicaArray.size(); i++)
 		{
-			System.out.print(tablica[i] + " ");
-			if (tablica[i] >= maks)
+			System.out.print(tablicaArray.get(i) + " ");
+			if (tablicaArray.get(i) >= maks)
 			{
-				maks = tablica[i];
+				maks = tablicaArray.get(i);
 			}
 
 		}
 		System.out.println("");
 		System.out.println(maks);
 
-		for (int i = 0; i < licznik; i++)
+		for (int i = 0; i < tablicaArray.size(); i++)
 		{
-			if (tablica[i] == maks)
+			if (tablicaArray.get(i) == maks)
 			{
 				gdzieMaks[licznikMaks] = i;
 				licznikMaks++;

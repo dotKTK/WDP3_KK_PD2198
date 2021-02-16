@@ -70,7 +70,7 @@ public class Main
 
 		for (int i = start; i <= stop; i++)
 		{
-			if (podSuma <= suma)
+			if (podSuma+i <= suma)
 			{
 				podSuma = podSuma + i;
 			}
